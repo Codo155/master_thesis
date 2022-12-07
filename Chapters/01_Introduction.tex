@@ -1,0 +1,40 @@
+
+\section{Motivation}
+% Introduce Topic
+To what extent is computer science able to improve medical decision making? Although many technical revolutionary inventions  have already been discovered in the past century, the technical advance into the medical field has not stopped yet. One of the major breakthroughs in this field was the discovery of the X-Ray in 1895. First usages of X-Ray's involved the creation of two dimensional images of the human body. These images were able to help to treat different conditions as broken bones. Based on this, \ac{CT} scans, which deliver a three-dimensional image instead of a two dimensional image, were developed. Further research focused not only on medical imaging but also image processing. Especially the segmentation of different areas of the body, like organs, is relevant for the medical field  \cite{Aljabri.2022}.  Possible medical applications are for surgery, diseases detection, treatment planning or cancer detection and treatment. Considering the low tolerance for error in the medical field, these applications require accurate and precise segmentation. Poor segmentation can lead to complication, e.g. during radiotherapy, radiation cannot only kill cancer cells but also harm healthy organs. Furthermore, organ segmentation is used as the basis for other medical processes. Achieving segmentation in a sufficient quality for the intended medical purpose through manual contouring is labor intensive and time consuming. Therefore, automated segmentation methods are of high interest. They can shorten segmentation time, saving labor and possibly improving treatments.  \citeauthor{Altini.2022} \cite{Altini.2022}  states that in recent years there have been more than 80000 results on Google Scholar towards medical image processing. Specifically for multiorgan segmentation in the abdominal area,a recent review \cite{Kaur.2022} reports the great interest into the topic, using different methods. In 2015 the number of publications spiked and is now rising again. At the same time deep learning based methods became significantly more popular and started to catch up with atlas based and statistical segmentation methods. As for today, (multi)organ segmentation is still of great interest and subject to many studies. Nevertheless, segmentation by current methods are still in need for manual correction while research on deep learning frameworks such as \citetitle{He.op.2017}  \cite{He.op.2017}  for abdominal segmentation are still missing. Hence, this thesis evaluates the feasibility of \citetitle{He.op.2017}  \cite{He.op.2017} for abdominal organ segmentation.
+
+
+
+
+\section{Related Work}
+
+Compared to the traditional manual segmentation of organs, the automated process is more efficient regarding time consumption. Nevertheless, the main goal of both approaches is to minimize the delineation of the segmentation. The methods for automated segmentation can be classified into following categories \cite{Lenchik.2019}: thresholding, statistical,  deformable model, graph search, multiresolution, texture analysis, neural networks and hybrid. In  the past, most studies researched atlas based segmentation methods for the abdominal region, followed by the use of neural networks. A comparison by \citeauthor{Ahn.2019} \cite{Ahn.2019} in 2019 shows that, despite the amount of research until then, that deep learning frameworks (a form of neural networks) are superior than atlas based models. Now most research focus on deep learning frameworks for segmentation. For \ac{CNN} (a form of deep learning frameworks) there are two different types of frameworks: (a) one-stage algorithms; (b)  two-stage algorithms. One-stage algorithm segment and classify pixel in one step while two-stage algorithm locate and classify objects sequentially. \citetitle{Isensee.2021}\cite{Isensee.2021} by \citeauthor{Isensee.2021} introduced the nnU-Net framework, a one-stage algorithm which achieved remarkable results and outperformed prior methods. Regardless of nnU-Net success, two-stage algorithms perform better on multi-object segmentation, for example when segmenting both kidneys of the human body. Such algorithm have to be yet researched. Therefore \citetitle{He.op.2017}  \cite{He.op.2017}, a two-stage algorithm, has great research value \cite{Shu.2020} and is subject of this thesis.
+
+
+
+% Specify goal objectives
+
+\section{Purpose and Research Question }
+As stated before, \citetitle{He.op.2017}  \cite{He.op.2017} has great research value and potential to outperform nnU-Net\cite{Isensee.2021}. In this regard, this thesis paper analyzes the performance  of \citetitle{He.op.2017} and focuses on answering following research questions:
+
+\begin{enumerate}
+    \item Is it feasible to train a Mask R-CNN for automated kidney segmentation on heterogeneous
+    CT-Data to meet clinical requirements?
+    \item What degree of congruence can be achieved with manual expert segmentation and what is
+    the run-time of the classification algorithm?
+\end{enumerate}
+
+This document aims to answer the research question in order to gain an indication of the general usability of \citetitle{He.op.2017}  \cite{He.op.2017} for organ segmentation. The abdominal region is one of the most difficult regions to segment due to the numerous organs with soft tissue. Kidneys are a suitable challenge as unlike other abdominal organs, human bodies usually have more than one.  
+
+\section{Methodology }
+
+The research questions will be answered through the execution of an experiment. A  Mask R-CNN \cite{He.op.2017} framework will be trained on Matlab using multiple \ac{CT} images. The run-time will be measured and the segmentation results will be compared to the expert segmentation masks by using \ac{DSC}, \ac{RVD} and \ac{HDD} to answer the second research question.  NnU-Net\cite{Isensee.2021} achieved 97\% \ac{DSC}. For this evaluation the framework has to achieve at least 80\% \ac{DSC} to be considered feasible for further research in regard of the first research questions. Details about the metrics and experimental set up are described in chapter TODO
+
+
+\section{Scope}
+
+Performance can vary between different train and test data sets due to differences in data availability, quality and the organ to be segmented. This thesis focuses on kidney segmentation using \ac{CT} images only. As required by the advisor, Matlab will be used for the Mask R-CNN \cite{He.op.2017} implementation. Only the basic ready to use Mask R-CNN implementation will be used and only essential preprocessing steps are applied, as further fine tuning experiments are outside the scope of this thesis. In regard of the first research question, the aim is to achieve only an indication of feasibility. Therefore, it is not expected for the framework to achieve compareable or even superior results in order to be considered feasible. In the context of this thesis, feasibility is referred to the potential of the framework by further development and research. 
+
+% Structure of thesis
+
+% Chapter \ref{Methodology} describes the general approach of this thesis. Chapter \ref{Mask R-CNN} describes the \citetitle{He.op.2017}  \cite{He.op.2017} framework and its development. Chapter \ref{Application} describes the given data, experiment set up and the results with its conclusion. Chapter \ref{Conclusion} concludes this thesis, sets its limitations and refers to further research.

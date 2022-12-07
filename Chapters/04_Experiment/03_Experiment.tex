@@ -1,0 +1,13 @@
+The network was trained with following environment:
+
+\begin{description}
+    \item OS Microsoft Windows 10 Education~Version	10.0.19044
+    \item CPU Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz  
+    \item RAM  16,0 GB
+    \item GPU  NVIDIA GeForce GTX 1080 Ti                         
+\end{description}
+
+Before training, the training images described in chapter \ref{dataSescription} were normalized to reach a value between zero and one. In total, the network is trained over ten epochs. Each epoch consisted of 13127 steps over approximately 6 hours, resulting into a total training time of 60 hours. The Matlab Mask R-CNN implementation \cite{GitHub.25Aug22, .25Aug22} uses a ResNet50 \cite{K.He.2016}  backbone and allows to set up a threshold as described in chapter \ref{MaskRCNN}. With the threshold it is possible to increase and decrease the amount of false positive/negative. For the experiment, each of the ten networks was validated against the test data with ten different thresholds ranging from 0.1 to 1.0 with an interval of 0.1. As Mask R-CNN adjust the mini batch size automatically as described in chapter \ref{MaskRCNN}, no batch size is given.
+Results can be seen in chapter \ref{Results}. Used metrics are described in chapter \ref{Methodology}.
+ 
+

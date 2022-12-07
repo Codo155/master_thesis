@@ -1,0 +1,12 @@
+
+
+\begin{itemize}
+    \item \textit{R-CNN} \cite{Girshick.11Nov13} uses three modules for Object Detection. First, it uses Selective Search to generate a list of \ac{RoI}. Second, each proposal is processed through a \ac{CNN} for feature extraction. The third and last step is the classification and localization of the \ac{RoI}.
+    
+    \item \textit{Fast R-CNN} \cite{Girshick.30Apr15} processes the entire image through a \ac{CNN} to generate a feature map. Each \ac{RoI} is rendered from the feature map and transformed into a uniform size using RoI Pooling. The \ac{RoI} is then fed to a \acl{fc} network in order to be classified and localized by a SoftMax layer at the end.
+    
+    \item \textit{Faster R-CNN} \cite{Ren.04Jun15} switches the selective search algorithm with a Region Proposal Network and thus significantly improves the prediction time. 
+    
+\end{itemize}
+
+R-CNN \cite{Girshick.11Nov13} provides the basic architecture for classification and localization. Faster R-CNN \cite{Girshick.30Apr15} improves it in multiple ways. It is using the entire image instead of each \ac{RoI} for the \acl{CNN} and thus increases the training speed. Additionally, the proposals are combined to one batch, which increases the speed even further. Furthermore, the \ac{RoI} Pooling puts the proposals into the same size and thus enabling the usage of a \acl{fc} network to increase the accuracy. Faster R-CNN \cite{Ren.04Jun15} improves the quality and speed by implementing a Region Proposal Network. This network enables the framework to render proposals faster.

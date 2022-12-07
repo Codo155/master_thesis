@@ -1,0 +1,22 @@
+% Context
+ One of the major medical breakthroughs in medicine and physics was the development of \acl{CT} scans, which deliver a three-dimensional image of the human body. Further research focused not only on medical imaging but also image processing. In recent years, \acl{AI} was introduced for image processing purposes by applying Artificial Neural Networks (ANN) to classify, segment or detect objects, such as organs, within images. 
+In 2021 \citetitle{Isensee.2021} \cite{Isensee.2021}  made a major breakthrough by introducing the nnU-Net Neural Network which outperformed other algorithms in the field of biomedical image segmentation. Nevertheless, other Deep Learning Networks could provide even more accurate predictions. For \acl{CNN}s there are two different types of frameworks: (a) one-stage algorithms; (b)  two-stage algorithms. Two-stage algorithms perform better on multi-object segmentation, for example for segmenting both kidneys of the human body. Therefore \citetitle{He.op.2017}  \cite{He.op.2017} has great research value \cite{Shu.2020}.
+ 
+ 
+% Research Question
+In this regard, this thesis analyzes the performance \citetitle{He.op.2017} and focuses on answering following research questions:
+
+\begin{enumerate}
+    \item Is it feasible to train a Mask R-CNN for automated kidney segmentation on heterogeneous
+    CT-Data to meet clinical requirements?
+    \item What degree of congruence can be achieved with manual expert segmentation and what is
+    the runtime of the classification algorithm?
+\end{enumerate}
+
+
+% Methods
+To answer the questions, a Mask R-CNN  network was trained on publicly available \ac{CT} images. 
+% Results
+ The framework proved not to be feasible using a two-dimensional operation. However, the experiment displays the limitation of the framework on which the framework can be improved, clearly.
+% Significance
+These results indicate how to proceed in further research.

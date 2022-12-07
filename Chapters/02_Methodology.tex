@@ -1,0 +1,40 @@
+
+% Methods
+
+For this thesis a Mask R-CNN  network was trained on publicly available \ac{CT} images. As Mask R-CNN uses a two-stage algorithm and is suitable for multi-object segmentation \cite{Shu.2020}, the experiment focuses on kidneys. Humans mostly have two kidneys and are the only organ within the abdominal region to be so. Therefore, they pose a suitable challenge. The performance of the trained algorithm was measured with following metrics:
+
+\begin{itemize}
+
+    \item \textit{\ac{AC}} expresses the ratio of right predictions to the sum of all prediction. It is defined as:
+    \begin{equation}
+        AC = \frac{TP + TN}{TP+TN+FP+FN}  
+    \end{equation}
+    where TP stands for True Positive, TN for True Negative, FP for False Positive and FN for False Negative.
+    
+    \item \textit{ \ac{DSC} } \cite{Sasaki.2007, Dice.1945}, also known as F1-Score, is defined as: 
+    \begin{equation}  
+        DSC = \frac{2\left |X\cap Y\right |}{\left | X \right | + \left | Y \right |} 
+    \end{equation} 
+    where X is the segmentation mask and Y the ground truth.
+    
+    \item \textit{\ac{J}} \cite{Jaccard.1912} is defined as: 
+    \begin{equation} 
+        J = \frac{\left |X\cap Y\right |}{\left | X\cup  Y \right |}   
+    \end{equation}
+    where X is the segmentation mask and Y the ground truth. It expresses the similarity of the two sets.
+    
+    
+    \item \textit{\ac{RVD}} \cite{Nai.2021, Heimann.2009} is defined as:
+    \begin{equation}
+        RVD = \frac{\left |X \right | - \left | Y \right |}{\left |   Y \right |}  
+    \end{equation}
+    where X is the segmentation mask and Y the ground truth.
+
+    
+\end{itemize}
+
+The metrics were chosen as they are the most common metrics in segmentation task. As a programming language for this project, Matlab was chosen for two reasons: (a) if successfully it shall be implemented into QDOSE \cite{.23Aug22} in which Matlab was used; (b) Matlab already has a fully implemented Mask R-CNN network. For analytics and visualization, Python is used. The scripts for the experiment can found in the attachments. Considering this thesis evaluates only Mask R-CNN with solely targeting the kidneys and only works with a limited amount of data, this work is regarded as qualitative research.
+% Justify
+It aims only to give an indication, if Mask R-CNN may be practical for medical image segmentation. The outcome will show if further research is feasible or not.
+
+
